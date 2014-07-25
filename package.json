@@ -1,0 +1,33 @@
+{
+  "name": "catalyze",
+  "version": "1.0.0",
+  "description": "Node bindings for Catalyze.io v2 API",
+  "repository": "https://github.com/catalyzeio/catalyze-js-sdk.git",
+  "main": "dist/node-catalyze.js",
+  "scripts": {
+    "test": "node build.js; mocha --timeout 10000 test",
+    "preinstall": "node build.js"
+  },
+  "keywords": [
+    "catalyze",
+    "node",
+    "hipaa",
+    "hl7",
+    "ccda"
+  ],
+  "author": "npm@catalyze.io",
+  "license": "Apache",
+  "engines": [
+    "node >= 0.8.0"
+  ],
+  "dependencies": {
+    "request": "2.37.0"
+  },
+  "devDependencies": {
+    "mocha": "1.20.*",
+    "jsdom": "~0.11.1",
+    "jquery": "~2.1.1",
+    "angular": "~1.2.19",
+    "xmlhttprequest": "~1.6.0"
+  }
+}

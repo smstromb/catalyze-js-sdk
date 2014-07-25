@@ -1,0 +1,39 @@
+{
+  "name": "catalyze",
+  "version": "1.0.0",
+  "homepage": "https://github.com/catalyzeio/catalyze-js-sdk",
+  "authors": [
+    "npm@catalyze.io"
+  ],
+  "main": [
+    "dist/jquery-catalyze.js",
+    "dist/angular-catalyze.js"
+  ],
+  "description": "Catalyze v2 API JavaScript SDK",
+  "keywords": [
+    "catalyze",
+    "node",
+    "angular",
+    "jQuery",
+    "hipaa",
+    "hl7",
+    "ccda",
+    "storage",
+    "backend",
+    "sdk",
+    "wrapper"
+  ],
+  "license": "Apache",
+  "ignore": [
+    "**/.*",
+    "src",
+    "dist/node-catalyze.js",
+    "node_modules",
+    "bower_components",
+    "test",
+    ".gitignore",
+    ".travis.yml",
+    "build.js",
+    "package.json"
+  ]
+}
