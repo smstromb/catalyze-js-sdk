@@ -1,6 +1,15 @@
 var assert = require("assert");
 
-angular = require("angular");
+// globals for angular
+var jsdom = require("jsdom").jsdom;
+document = jsdom("<html><body></body></html>");
+window = document.createWindow();
+navigator = require("navigator");
+
+require("angular");
+
+angular = window.angular;
+
 require("../dist/angular-catalyze");
 var inject = angular.injector(["ng", "catalyze"]).invoke;
 
