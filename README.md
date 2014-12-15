@@ -79,3 +79,5 @@ catalyze.signIn(...);
 ### SDK Docs
 
 [Full SDK Docs](https://github.com/catalyzeio/catalyze-js-sdk/blob/master/docs.md)
+
+[Full Catalyze Docs](https://resources.catalyze.io/)
