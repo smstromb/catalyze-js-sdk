@@ -1,6 +1,6 @@
 {
   "name": "catalyze",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Node bindings for Catalyze.io v2 API",
   "repository": "https://github.com/catalyzeio/catalyze-js-sdk.git",
   "main": "dist/node-catalyze.js",

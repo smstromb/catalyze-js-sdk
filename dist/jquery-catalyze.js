@@ -13,8 +13,8 @@ var integrateCatalyzeCore = function(self, http) {
     // Sign in with username and password
     self.signIn = function(username, password, success, error) {
         http.post("auth/signin", {username: username, password: password}, {}, function(user, second) {
-            /* 
-                node's callback convention is a single callback. therefore, if no error is passed, 
+            /*
+                node's callback convention is a single callback. therefore, if no error is passed,
                 we assume this is being called from node, and use the "second" variable accordingly.
             */
             if (error != null) { // non-node
@@ -55,7 +55,7 @@ var integrateCatalyzeCore = function(self, http) {
                     success(session);
                 } else { // node
                     if (value) {
-                        success(value.errors);
+                        success(value);
                     } else {
                         session.sessionUser = second;
                         success(false, session);

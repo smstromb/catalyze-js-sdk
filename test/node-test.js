@@ -92,6 +92,15 @@ describe("node-catalyze", function() {
                         done();
                 });
             });
+
+            it("should have a properly-formatted error body for session errors", function(done) {
+                catalyze.sessionFromToken(session.usersId, "abc123notarealtoken", function(errors, tokenSession) {
+                    assert(errors, JSON.stringify(errors));
+                    assert(errors.errors, JSON.stringify(errors));
+                    assert(errors.errors.length > 0);
+                    done();
+                });
+            });
         });
 
         describe("customClassEntries", function() {
