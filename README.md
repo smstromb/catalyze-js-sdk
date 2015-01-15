@@ -1,4 +1,7 @@
 ## JS SDK for the Catalyze v2 API
+
+[![Build Status](https://travis-ci.org/catalyzeio/catalyze-js-sdk.svg?branch=master)](https://travis-ci.org/catalyzeio/catalyze-js-sdk)
+
 Supports node, jQuery, and angular.
 
 * jQuery >= 1.5
