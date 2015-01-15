@@ -25,6 +25,7 @@ describe("node-catalyze", function() {
                 "I swear, if somebody registers this account",
                 function(error, session) {
                     assert(error);
+                    assert(error["errors"]);
                     done();
                 });
         });
@@ -67,6 +68,30 @@ describe("node-catalyze", function() {
                     done();
                 });
             })
+        });
+
+        describe("errors", function() {
+            it("should have a properly-formatted error body for login errors", function(done) {
+                catalyze.signIn("this shouldn't be a valid username",
+                    "I swear, if somebody registers this account",
+                    function(errors, session) {
+                        assert(errors);
+                        assert(errors.errors);
+                        assert(errors.errors.length > 0);
+                        done();
+                });
+            });
+
+            it("should have a properly-formatted error body for non-login errors", function(done) {
+                session.createClassEntry("this-class-does-not-exist", {
+                        hi: "hello"
+                    }, function(errors, success) {
+                        assert(errors);
+                        assert(errors.errors);
+                        assert(errors.errors.length > 0);
+                        done();
+                });
+            });
         });
 
         describe("customClassEntries", function() {
