@@ -50,6 +50,31 @@ describe("angular-catalyze", function() {
                 });
             });
         });
+
+        describe("verifyToken", function() {
+            var sessionToken, usersId;
+
+            before(function(done) {
+                catalyze.signIn(USERNAME, PASSWORD, function(success) {
+                    sessionToken = success.token;
+                    usersId = success.usersId;
+                    assert(sessionToken);
+                    done();
+                }, function(errors) {
+                    assert(errors);
+                    assert.fail(0, errors.length, errors);
+                });
+            });
+
+            it("should return the usersId if session is valid", function(done) {
+                catalyze.verifyToken(sessionToken, function(result) {
+                    assert.equal(result.userId, usersId);
+                    done();
+                }, function(errors) {
+                    assert(errors);
+                    assert.fail(0, errors.length, errors);
+                })
+            })
+        });
     });
 });
-

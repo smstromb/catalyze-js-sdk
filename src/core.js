@@ -39,6 +39,11 @@ var integrateCatalyzeCore = function(self, http) {
         http.get(self.appId + "/reset/user/" + encodeURIComponent(username), {}, success, error);
     };
 
+    // Verify that a token is still valid
+    self.verifyToken = function(token, success, error) {
+        http.authed_get(token, "auth/verify/", {}, success, error);
+    }
+
     // Create a session object from a usersId and token
     self.sessionFromToken = function(usersId, token, success, error) {
         var session = new Session(usersId, token);
